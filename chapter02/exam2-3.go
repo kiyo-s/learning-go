@@ -16,10 +16,4 @@ func main() {
 
 	fmt.Println(x)
 	fmt.Println(y)
-
-	x = x + 1
-	y = "bye"
-
-	fmt.Println(x)
-	fmt.Println(y)
 }
