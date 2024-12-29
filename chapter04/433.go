@@ -37,4 +37,10 @@ func main() {
 		}
 		fmt.Println()
 	}
+
+	for _, v := range evenVals{
+		v *= 2
+		fmt.Println(v)
+	}
+	fmt.Println(evenVals)
 }
