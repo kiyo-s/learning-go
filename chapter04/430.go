@@ -12,4 +12,10 @@ func main() {
 		fmt.Println(j)
 		j = j * 2
 	}
+
+	k := 1
+	for {
+		fmt.Println("Hello, World!: ", k)
+		k++
+	}
 }
