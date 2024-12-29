@@ -29,4 +29,12 @@ func main() {
 			fmt.Println(k, v)
 		}
 	}
+
+	samples := []string{"hello", "apple_π!", "これは漢字文字列"}
+	for _, sample := range samples {
+		for i, r := range sample {
+			fmt.Println(i, r, string(r))
+		}
+		fmt.Println()
+	}
 }
