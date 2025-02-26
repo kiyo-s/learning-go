@@ -13,10 +13,11 @@ func main() {
 
 		for i := 1; i <= 5; i++ {
 			ch <- i
+			fmt.Println("Write to ch ", i)
 		}
 	}()
 
 	for v := range ch {
-		fmt.Println(v)
+		fmt.Println("Receive from ch ", v)
 	}
 }

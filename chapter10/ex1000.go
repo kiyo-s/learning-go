@@ -11,6 +11,7 @@ func runThingsConcurrently(chIn <-chan int, chOut chan<- string) {
 		go func(val int) {
 			result := doBusinessLogic(val)
 			resultString := fmt.Sprintf("%d -> %d", val, result)
+			fmt.Println(val, "is processed")
 			chOut <- resultString
 		}(val)
 	}
