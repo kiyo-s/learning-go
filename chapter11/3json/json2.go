@@ -29,6 +29,9 @@ func main() {
 	}
 
 	fmt.Printf("%+v\n", o)
+
+	out, err := json.Marshal(o)
+	fmt.Println(out)
 }
 
 func readData() []byte {
