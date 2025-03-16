@@ -8,8 +8,10 @@ import (
 
 func main() {
 	ctx := context.Background()
+	ctx2, cancel := context.WithTimeout(ctx, 1*time.Second)
+	defer cancel()
 	data := "abc"
-	longRunningThingManager(ctx, data)
+	longRunningThingManager(ctx2, data)
 }
 
 func longRunningThingManager(ctx context.Context, data string) (string, error) {
