@@ -13,7 +13,14 @@ func TestCreatePerson(t *testing.T) {
 	}
 
 	result := CreatePerson("Denis", 37)
-	if diff := cmp.Diff(expected, result); diff != "" {
+	comparer := cmp.Comparer(func(x, y Person) bool {
+		return x.Name == y.Name && x.Age == y.Age
+	})
+	if diff := cmp.Diff(expected, result, comparer); diff != "" {
 		t.Error(diff)
+	}
+
+	if result.DateAdded.IsZero() {
+		t.Error("DateAdded was't assigned")
 	}
 }
